@@ -3,3 +3,15 @@
 
 @import "base/reset";
 @import "base/_typography";
+
+@import "layout/header";
+@import "layout/function";
+@import "layout/restaurants";
+@import "layout/footer";
+
+@import "pages/home";
+
+@import "components/place";
+@import "components/reservation";
+@import "components/button";
+@import "components/restaurant-card";

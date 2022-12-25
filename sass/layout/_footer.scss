@@ -1,0 +1,25 @@
+footer {
+    background:#323232;
+    padding: 1rem;
+    color: white;
+
+    h1 {
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        gap: .25rem;
+        display: flex;
+        flex-direction: column;
+        a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+    }
+}

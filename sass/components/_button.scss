@@ -1,0 +1,15 @@
+.rounded-btn {
+  border-radius: 25px;
+  background: linear-gradient(170deg, var(--secondary), var(--primary));
+  border: none;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  box-shadow: 1px 2px 7px #adadad;
+  cursor: pointer;
+  transition: all;
+}
+
+.rounded-btn:hover {
+    box-shadow: 1px 2px 7px #8a8a8a;
+}

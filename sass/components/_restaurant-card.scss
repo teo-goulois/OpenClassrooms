@@ -1,0 +1,45 @@
+.restaurant__card {
+  display: flex;
+  flex-direction: column;
+  min-height: 225px;
+  background: white;
+  overflow: hidden;
+  border-radius: 15px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  
+  .is-new {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--tertiary);
+    z-index: 2;
+    color: #00b185;
+    font-weight: 700;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.restaurant__card__img__wrapper {
+  flex: 8;
+  position: relative;
+  background-color: aqua;
+  img {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.restaurant__card__information {
+  flex: 1;
+  height: fit-content;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

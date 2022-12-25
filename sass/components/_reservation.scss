@@ -1,0 +1,13 @@
+.reservation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+    background: #f1f1f1;
+
+    p {
+        opacity: .7;
+    }
+}

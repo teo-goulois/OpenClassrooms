@@ -1,0 +1,23 @@
+header {
+  width: 100%;
+  background: white;
+  padding: 0.5rem;
+  box-shadow: 1px -1px 7px gray;
+  display: flex;
+  align-items: center;
+ 
+
+
+  h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.header--page {
+    h1 {
+        text-align: center;
+        transform: translateX(-16px);
+      }
+   
+}
