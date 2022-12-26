@@ -1,0 +1,81 @@
+.recipy__card {
+  background: white;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 1px 2px 7px #adadad;
+  overflow: hidden;
+  height: 60px;
+  animation: appearance 1s ease-in-out;
+
+  &:hover .checked {
+    width: 60px;
+    transition: all 0.5s ease-in-out;
+
+    svg {
+      transform: rotate(0);
+    }
+  }
+
+  .checked {
+    color: white;
+    width: 0px;
+    transform-origin: right;
+    background: var(--tertiary);
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+
+    svg {
+      margin: 18px;
+
+      transform: rotate(-180deg);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  .price {
+    font-weight: 700;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: end;
+
+    span {
+      padding: 0.75rem;
+    }
+  }
+}
+
+.recipy__card__wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  overflow: hidden;
+  height: 100%;
+
+  h4,
+  P {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

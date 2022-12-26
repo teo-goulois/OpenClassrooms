@@ -8,6 +8,9 @@
   box-shadow: 1px 2px 7px #adadad;
   cursor: pointer;
   transition: all;
+  width: fit-content;
+  margin: auto;
+  min-width: 190px;
 }
 
 .rounded-btn:hover {
