@@ -1,5 +1,9 @@
 .function {
   padding: 1rem;
+  @include respond-to("medium") {
+    max-width: 500px;
+    margin: auto;
+  }
 }
 
 .function__wrapper {
