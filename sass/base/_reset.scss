@@ -9,6 +9,11 @@ body {
   color: black;
 }
 
+.home {
+  overflow: hidden;
+  animation: hideScroll .5s  2.5s forwards;
+}
+
 .hidden {
   display: none;
 }
@@ -32,5 +37,15 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@keyframes hideScroll {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: initial;
   }
 }

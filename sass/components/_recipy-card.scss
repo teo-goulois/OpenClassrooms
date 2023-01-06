@@ -9,7 +9,14 @@
   box-shadow: 1px 2px 7px #adadad;
   overflow: hidden;
   height: 60px;
-  animation: appearance 1s ease-in-out;
+  opacity: 0;
+  animation: appearance 1s ease-in-out forwards;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i/3}s;
+    }
+  }
 
   &:hover .checked {
     width: 60px;

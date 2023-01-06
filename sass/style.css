@@ -17,6 +17,12 @@ body {
   color: black;
 }
 
+.home {
+  overflow: hidden;
+  -webkit-animation: hideScroll 0.5s 2.5s forwards;
+          animation: hideScroll 0.5s 2.5s forwards;
+}
+
 .hidden {
   display: none;
 }
@@ -51,6 +57,22 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@-webkit-keyframes hideScroll {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: initial;
+  }
+}
+@keyframes hideScroll {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: initial;
   }
 }
 h1 {
@@ -331,6 +353,7 @@ footer ul a {
 
 .rounded-btn:hover {
   box-shadow: 1px 2px 7px #8a8a8a;
+  background: linear-gradient(170deg, #ff9ee4, #8839e7);
 }
 
 .restaurant__card {
@@ -401,8 +424,29 @@ footer ul a {
   box-shadow: 1px 2px 7px #adadad;
   overflow: hidden;
   height: 60px;
-  -webkit-animation: appearance 1s ease-in-out;
-          animation: appearance 1s ease-in-out;
+  opacity: 0;
+  -webkit-animation: appearance 1s ease-in-out forwards;
+          animation: appearance 1s ease-in-out forwards;
+}
+.recipy__card:nth-child(1) {
+  -webkit-animation-delay: 0.3333333333s;
+          animation-delay: 0.3333333333s;
+}
+.recipy__card:nth-child(2) {
+  -webkit-animation-delay: 0.6666666667s;
+          animation-delay: 0.6666666667s;
+}
+.recipy__card:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.recipy__card:nth-child(4) {
+  -webkit-animation-delay: 1.3333333333s;
+          animation-delay: 1.3333333333s;
+}
+.recipy__card:nth-child(5) {
+  -webkit-animation-delay: 1.6666666667s;
+          animation-delay: 1.6666666667s;
 }
 .recipy__card:hover .checked {
   width: 60px;
@@ -473,5 +517,99 @@ footer ul a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 50;
+  background: white;
+  -webkit-animation: preloader 3s ease-in-out forwards;
+          animation: preloader 3s ease-in-out forwards;
+}
+
+@-webkit-keyframes preloader {
+  from {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    z-index: 50;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes preloader {
+  from {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    z-index: 50;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.loader, .loader:before, .loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: bblFadInOut 1.8s infinite ease-in-out;
+          animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+
+.loader {
+  color: #000;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 3.5em;
+}
+
+@-webkit-keyframes bblFadInOut {
+  0%, 80%, 100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
   }
 }/*# sourceMappingURL=style.css.map */
