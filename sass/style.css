@@ -15,6 +15,13 @@
 body {
   font-family: "Roboto", sans-serif;
   color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .home {
@@ -201,8 +208,9 @@ header h1 {
 }
 @media (min-width: 992px) {
   .restaurants__wrapper {
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 0fr));
   }
 }
 
@@ -570,7 +578,7 @@ footer ul a {
 }
 
 .loader {
-  color: #000;
+  color: var(--primary);
   font-size: 7px;
   position: relative;
   text-indent: -9999em;
