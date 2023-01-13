@@ -1,4 +1,3 @@
-console.log("product");
 // Get params from url
 const searchUrl = window.location.search;
 const urlParams = new URLSearchParams(searchUrl);
@@ -8,12 +7,11 @@ const id = urlParams.get("id");
 // variables
 let color = undefined
 let quantity = undefined
-product = undefined
+let product = undefined
 
 
 window.onload = async function exampleFunction() {
   // Function to be executed
-  console.log(id);
   const response = await fetch("http://localhost:3000/api/products/" + id);
   const data = await response.json();
   product = data
@@ -40,34 +38,51 @@ window.onload = async function exampleFunction() {
 const colorSelect = document.querySelector('#colors')
 colorSelect.addEventListener('change', (e) => {
     color = e.target.value
-    console.log(color, quantity);
 })
 // listen quantity button
 const quantityButton = document.querySelector('#quantity')
 quantityButton.addEventListener('change', (e) => {
-    quantity = e.target.value
-    console.log(color, quantity);
+    quantity = parseInt(e.target.value) 
 })
 
 function add2Cart() {
+     // check if we have a quantity and a color selected
+     if(color && quantity) {
+        //add to localstorage
+        const cart = getCart()
+        // check if product already in cart
+        const productIsFound = cart.find((el) => el.id === product._id)
+        if(productIsFound) {
+            const foundColor = productIsFound.products.find(el => el.color === color)
+            if(foundColor) {
+                foundColor.quantity = parseInt(foundColor.quantity + quantity) 
+            } else {
+                productIsFound.products.push({color, quantity})
+            }
 
+        } else {
+            // add product to cart
+            cart.push({id: product._id, products: [{color, quantity}]})
+        }        
+        localStorage.setItem('cart', JSON.stringify(cart))
+    } else {
+        alert('vous devez sélectioner une couleur et une quantité pour pouvoir l\'ajouter au panier')
+    }
 }
 
 //listen add to cart button
 const cartButton = document.querySelector('#addToCart')
 cartButton.addEventListener('click', () => {
-    console.log('cliock cart button');
-    // check if we have a quantity and a color selected
-    if(color && quantity) {
-        //add to localstorage
-        const cart = [{
-            color,
-            quantity,
-            product
-        }]
-        console.log(cart, 'CART');
-        //localStorage.setItem('cart')
-    } else {
-        alert('vous devez sélectioner une couleur et une quantité pour pouvoir l\'ajouter au panier')
-    }
+    add2Cart()
 })
+
+function getCart() {
+    let rawCart = localStorage.getItem('cart')
+    if(!rawCart) {
+        // Create a cart
+        localStorage.setItem('cart', JSON.stringify([]))
+        rawCart = localStorage.getItem('cart')
+    }
+    const cart = JSON.parse(rawCart)
+    return cart
+}
