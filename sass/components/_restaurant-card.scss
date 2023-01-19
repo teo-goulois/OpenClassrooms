@@ -50,7 +50,7 @@
   }
   svg:hover {
     fill: url(#Gradient1) #fff;
-    stroke: white;
+    stroke: var(--primary);
 
   }
 }

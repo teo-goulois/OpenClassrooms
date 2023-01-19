@@ -418,7 +418,7 @@ footer ul a {
 }
 .restaurant__card__information svg:hover {
   fill: url(#Gradient1) #fff;
-  stroke: white;
+  stroke: var(--primary);
 }
 
 .recipy__card {
