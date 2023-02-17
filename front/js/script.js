@@ -1,6 +1,13 @@
+/**
+ * @typedef {import { Product } from "./types.js";} Product
+ */
 
-// fetch data then return it
-async function fetchData() {
+
+/**
+ * fetch all products then return it
+ * @returns {Promise<Product[]>}
+ */
+async function fetchProducts() {
   const response = await fetch("http://localhost:3000/api/products");
   const data = await response.json();
   return data;
@@ -8,26 +15,34 @@ async function fetchData() {
 
 const items = document.querySelector(".items");
 
-const data = await fetchData();
+const products = await fetchProducts();
 
 // for each item create a card
-data.forEach((element) => {
+products.forEach((product) => {
+  createItem(product)
+});
+
+/**
+ * create a card of a product
+ * @param { Product } product
+ */
+function createItem(product) {
   const a = document.createElement("a");
-  a.href = `./product.html?id=${element._id}`;
+  a.href = `./product.html?id=${product._id}`;
 
   const article = document.createElement("article");
   a.appendChild(article);
 
   const img = document.createElement("img");
-  img.src = element.imageUrl;
-  img.alt = element.altText;
+  img.src = product.imageUrl;
+  img.alt = product.altText;
 
   const h3 = document.createElement("h3");
-  h3.innerHTML = element.name;
+  h3.innerHTML = product.name;
   h3.className = "productName";
 
   const p = document.createElement("p");
-  p.innerText = element.description;
+  p.innerText = product.description;
   p.className = "productDescription";
 
   article.appendChild(img)
@@ -35,4 +50,4 @@ data.forEach((element) => {
   article.appendChild(p)
 
   items.appendChild(a);
-});
+}
