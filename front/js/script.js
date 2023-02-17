@@ -1,17 +1,9 @@
+import { fetchProducts } from "./utils.js";
+
 /**
  * @typedef {import { Product } from "./types.js";} Product
  */
 
-
-/**
- * fetch all products then return it
- * @returns {Promise<Product[]>}
- */
-async function fetchProducts() {
-  const response = await fetch("http://localhost:3000/api/products");
-  const data = await response.json();
-  return data;
-}
 
 const items = document.querySelector(".items");
 

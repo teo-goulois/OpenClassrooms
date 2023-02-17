@@ -10,13 +10,13 @@
  */
 
 /**
- * @typedef {Object} CartProducts
+ * @typedef {Object} CartProduct
  * @property {string} id
  * @property {CartProductDetails[]} products
  */
 
 /**
- * @typedef CartProductDetails
+ * @typedef {Object} CartProductDetails
  * @property {string} color
  * @property {number} quantity 
  */
