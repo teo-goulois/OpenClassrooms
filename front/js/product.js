@@ -15,8 +15,7 @@ const id = urlParams.get("id");
 
 // variables
 let color = undefined
-let quantity = 0
-let product = undefined
+let quantity = 1
 
 // Elements
 const colorSelect = document.querySelector("#colors");
@@ -59,9 +58,7 @@ window.onload = async () => {
     createProduct(product)
     cartButton.addEventListener('click', () => {
         add2Cart(product)
-        if(confirm('voulez vous aller au panié ?')) {
-            window.location.replace('/front/html/cart.html')
-        }
+       
     })
 
 }
@@ -96,6 +93,9 @@ function add2Cart(product) {
             cart.push({ id: product._id, products: [{ color, quantity }] })
         }
         localStorage.setItem('cart', JSON.stringify(cart))
+        if(confirm('voulez vous aller au panié ?')) {
+            window.location.replace('/front/html/cart.html')
+        }
     } else {
         alert('vous devez sélectioner une couleur et une quantité pour pouvoir l\'ajouter au panier')
     }
