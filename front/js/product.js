@@ -77,6 +77,7 @@ quantityButton.addEventListener('change', (e) => {
  */
 function add2Cart(product) {
     // check if we have a quantity and a color selected
+    if(quantity < 1) return alert('vous devez séléctionez une quantité supérieur à 0')
     if (color && quantity) {
         const cart = getCart()
 

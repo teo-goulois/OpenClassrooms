@@ -27,6 +27,7 @@
  * @param {string} [id]
  * @returns {Promise<Product[]>}
  */
+
 export async function fetchProducts(id) {
   let products = undefined
   if (id) {
