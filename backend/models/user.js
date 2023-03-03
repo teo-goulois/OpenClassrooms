@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    email: String, // unique
+    email: { type: String, unique: true, required: true }, // unique
     password: String, // hash password
 });
 
