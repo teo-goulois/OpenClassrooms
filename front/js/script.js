@@ -1,8 +1,16 @@
 import { fetchProducts } from "./utils.js";
 
 /**
- * @typedef {import { Product } from "./types.js";} Product
+ * @typedef {Object} Product
+ * @property {string[]} colors
+ * @property {string} _id
+ * @property {string} name
+ * @property {number} price
+ * @property {string} imageUrl
+ * @property {string} description
+ * @property {string} altTxt
  */
+
 
 
 const items = document.querySelector(".items");

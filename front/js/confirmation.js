@@ -1,5 +1,3 @@
-console.log('confirmation');
-
 const orderEl = document.querySelector('#orderId')
 
 const searchUrl = window.location.search;

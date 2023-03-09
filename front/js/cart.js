@@ -183,7 +183,6 @@ function updatePriceAndQuantity(cart) {
  * @returns 
  */
 function deleteItemFromCart(id, color, cart) {
-  console.log("🚀 ~ file: cart.js:187 ~ deleteItemFromCart ~ id", id)
   let newCart = cart.map(item => {
     if (item.id === id) {
       return { ...item, products: item.products.filter(i => i.color !== color) }

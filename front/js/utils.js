@@ -27,7 +27,6 @@
  * @param {string} [id]
  * @returns {Promise<Product[]>}
  */
-
 export async function fetchProducts(id) {
   let products = undefined
   if (id) {
@@ -40,6 +39,7 @@ export async function fetchProducts(id) {
   }
   return products;
 }
+
 
 /**
  * return the current cart
@@ -56,9 +56,6 @@ export function getCart() {
 }
 
 
-
-
-
 /**
  * 
  * @param {string} id 
@@ -68,10 +65,8 @@ export function getCart() {
  * @returns {CartProduct[]}
  */
 export function updateQuantity(id, color, quantity, cart) {
-  console.log(id,"🚀 ~ file: utils.js:70 ~ updateQuantity ~ cart", cart)
   // check if product already in cart
   const productIsFound = cart.find((el) => el.id === id);
-  console.log("🚀 ~ file: utils.js:72 ~ updateQuantity ~ productIsFound", productIsFound)
   if (productIsFound) {
     const foundColor = productIsFound.products.find((el) => el.color === color);
     if (foundColor) {

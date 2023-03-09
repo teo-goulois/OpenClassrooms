@@ -26,38 +26,38 @@ form.addEventListener('submit', async function (event) {
     }
 
     if (firstname === '') {
-        firstnameError.innerHTML = 'Please enter your first name';
+        firstnameError.innerHTML = 'Veuillez saisir votre prénom';
         error = true;
     } else {
         firstnameError.innerHTML = '';
     }
 
     if (lastname === '') {
-        lastnameError.innerHTML = 'Please enter your last name';
+        lastnameError.innerHTML = 'Veuillez saisir votre nom de famille';
         error = true;
     } else {
         lastnameError.innerHTML = '';
     }
 
     if (address === '') {
-        addressError.innerHTML = 'Please enter your address';
+        addressError.innerHTML = 'Veuillez saisir votre adresse';
         error = true;
     } else {
         addressError.innerHTML = '';
     }
 
     if (city === '') {
-        cityError.innerHTML = 'Please enter your city';
+        cityError.innerHTML = 'Veuillez saisir votre ville';
         error = true;
     } else {
         cityError.innerHTML = '';
     }
 
     if (email === '') {
-        emailError.innerHTML = 'Please enter your email';
+        emailError.innerHTML = 'Veuillez saisir votre adresse électronique';
         error = true;
     } else if (!validateEmail(email)) {
-        emailError.innerHTML = 'Please enter a valid email';
+        emailError.innerHTML = 'Veuillez saisir un courriel valide';
         error = true;
     } else {
         emailError.innerHTML = '';
@@ -76,7 +76,6 @@ form.addEventListener('submit', async function (event) {
                 return item.id
             })
         }
-        console.log(body, 'submit body');
         const response = await fetch("http://localhost:3000/api/products/order", {
             method: 'POST',
             headers: {
@@ -85,10 +84,8 @@ form.addEventListener('submit', async function (event) {
             body: JSON.stringify(body) 
 
         });
-        console.log("🚀 ~ file: form.js:91 ~ response", response)
         if(response.ok) {
             const res = await response.json();
-            console.log("🚀 ~ file: form.js:85 ~ res", res)
             window.location.assign(`/front/html/confirmation.html?order_id=${res.orderId}`)
         } else {
             alert('une erreur est survenue réessayer plus tard !')

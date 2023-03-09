@@ -1,8 +1,20 @@
 import { getCart } from "./utils.js";
 
 /**
- * @typedef {import { Product } from "./types.js";} Product
- * @typedef {import { CartProducts } from "./types.js";} CartProducts
+ * @typedef {Object} Product
+ * @property {string[]} colors
+ * @property {string} _id
+ * @property {string} name
+ * @property {number} price
+ * @property {string} imageUrl
+ * @property {string} description
+ * @property {string} altTxt
+ */
+
+/**
+ * @typedef {Object} CartProduct
+ * @property {string} id
+ * @property {CartProductDetails[]} products
  */
 
 
@@ -58,11 +70,9 @@ window.onload = async () => {
     createProduct(product)
     cartButton.addEventListener('click', () => {
         add2Cart(product)
-       
     })
 
 }
-
 
 colorSelect.addEventListener('change', (e) => {
     color = e.target.value
@@ -77,10 +87,9 @@ quantityButton.addEventListener('change', (e) => {
  */
 function add2Cart(product) {
     // check if we have a quantity and a color selected
-    if(quantity < 1) return alert('vous devez séléctionez une quantité supérieur à 0')
+    if (quantity < 1) return alert('vous devez séléctionez une quantité supérieur à 0')
     if (color && quantity) {
         const cart = getCart()
-
         const productIsFound = cart.find((el) => el.id === product._id)
         if (productIsFound) {
             const foundColor = productIsFound.products.find(el => el.color === color)
@@ -89,12 +98,11 @@ function add2Cart(product) {
             } else {
                 productIsFound.products.push({ color, quantity })
             }
-
         } else {
             cart.push({ id: product._id, products: [{ color, quantity }] })
         }
         localStorage.setItem('cart', JSON.stringify(cart))
-        if(confirm('voulez vous aller au panié ?')) {
+        if (confirm('voulez vous aller au panié ?')) {
             window.location.replace('/front/html/cart.html')
         }
     } else {
