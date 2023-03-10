@@ -1,0 +1,61 @@
+@use './mixins';
+
+.dropdown {
+
+    &_header {
+        background-color: var(--red);
+        color: white;
+        border-radius: 5px;
+        padding: 5.5px 11.5px;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mixins.devices(tablet) {
+            padding: 5.5px 18px;
+            font-size: 24px;
+
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            width: 18.46px;
+            height: 18.46px;
+
+            @include mixins.devices(tablet) {
+                width: 29px;
+                height: 29px;
+            }
+
+            &.open {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &_body {
+        background-color: var(--gray);
+        border-radius: 0 0 5px 5px;
+
+        transform-origin: top;
+        overflow: hidden;
+        height: 0;
+
+
+
+        &.open {
+            height: auto;
+            padding: 17px 11.5px;
+
+            @include mixins.devices(tablet) {
+                padding: 27px 18px;
+                font-size: 24px;
+            }
+        }
+    }
+}

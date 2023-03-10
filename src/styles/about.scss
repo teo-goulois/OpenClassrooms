@@ -1,0 +1,55 @@
+@use './mixins';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+
+    @include mixins.devices(tablet) {
+        padding: 27px 18px;
+        font-size: 24px;
+    }
+
+    &_img {
+        width: 100%;
+        aspect-ratio: 336/223;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        @include mixins.devices(tablet) {
+            aspect-ratio: 1240/223;
+        }
+
+        &_filter {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: black;
+            opacity: 0.3;
+            mix-blend-mode: darken;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &_dropdowns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include mixins.devices(tablet) {
+            width: 90%;
+            margin: 0 auto;
+            gap: 31px;
+        }
+    }
+
+
+}

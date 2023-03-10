@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
+
+    @include mixins.devices(tablet) {
+        gap: 43px;
+    }
 }
 
 .bg-img {
@@ -11,7 +15,7 @@
     height: 100%;
     border-radius: 10px;
     aspect-ratio: 335/111;
-    background-image: url('../assets/homepage.png');
+    background-image: url('../assets/images/homepage.png');
     background-position: right;
     background-size: cover;
     background-size: 120%;
