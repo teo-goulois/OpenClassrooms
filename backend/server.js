@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const helmet = require("helmet");
 const cors = require('cors');
 const path = require('path');
 const port = 3000;
@@ -16,22 +17,26 @@ const authRoutes = require('./routes/auth');
 mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true })
     .then(() => {
         console.log('Connected to database!');
-    }
-    )
+    })
     .catch(() => {
         console.log('Connection failed!');
-    }
-    );
-console.log(process.env.MONGO_DB_URL);
+    });
+
+// use helmet
+app.use(helmet({
+    crossOriginResourcePolicy: false,
+}));
 
 // use body parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // use cors
 app.use(cors());
 
 // use routes
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/sauces', saucesRoutes);
 app.use('/api/auth', authRoutes);
 
