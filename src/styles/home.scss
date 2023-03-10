@@ -1,0 +1,116 @@
+@use './mixins';
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    aspect-ratio: 335/111;
+    background-image: url('../assets/homepage.png');
+    background-position: right;
+    background-size: cover;
+    background-size: 120%;
+    display: flex;
+    align-items: center;
+    padding: 31px 16px;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    mix-blend-mode: darken;
+
+    @include mixins.devices(tablet) {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .background-filter {
+        background: #000;
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+    }
+
+    h2 {
+        position: relative;
+        z-index: 1;
+
+        br {
+            @include mixins.devices(tablet) {
+                display: none;
+            }
+        }
+    }
+}
+
+.apartments-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mixins.devices(tablet) {
+        flex-direction: row;
+        row-gap: 60px;
+        column-gap: 50px;
+        padding: 56px 50px;
+        background: var(--gray);
+        border-radius: 25px;
+        flex-wrap: wrap;
+    }
+
+    .apartment {
+        width: 100%;
+        aspect-ratio: 335/255;
+        border-radius: 10px;
+        background-color: var(--red);
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+
+        overflow: hidden;
+        position: relative;
+
+        padding: 15px 20px;
+
+        @include mixins.devices(tablet) {
+            aspect-ratio: 1/1;
+            flex: 1 1 240px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &_filter {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: var(--gradient);
+            width: 100%;
+            height: 100%;
+
+        }
+
+        h3 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+
+}

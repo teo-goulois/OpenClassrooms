@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/header.scss'
 
 // Components
 import { Logo } from './Logo'
 import MaxContainer from './MaxContainer'
-import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -17,10 +17,10 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <Link href="/">Accueil</Link>
+                <Link to="/">Accueil</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </nav>
