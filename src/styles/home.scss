@@ -47,6 +47,10 @@
         position: relative;
         z-index: 1;
 
+        @include mixins.devices(tablet) {
+            margin: 0 auto;
+        }
+
         br {
             @include mixins.devices(tablet) {
                 display: none;
