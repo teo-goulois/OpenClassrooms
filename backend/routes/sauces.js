@@ -14,7 +14,7 @@ router.get('/:id', auth, saucesCtrl.getById);
 router.post('/', auth, multer, saucesCtrl.postOne);
 
 // update a sauce with the given id
-router.patch('/:id', auth, multer, saucesCtrl.updateOne);
+router.put('/:id', auth, multer, saucesCtrl.updateOne);
 
 // delete a sauce with the given id
 router.delete('/:id', auth, saucesCtrl.deleteOne);

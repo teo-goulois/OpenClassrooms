@@ -29,6 +29,7 @@ exports.postOne = async (req, res, next) => {
         // save sauce to database
         const newSauce = new Sauce({
             ...sauce,
+            userId: req.auth.userId,
             imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
             likes: 0,
             dislikes: 0,
@@ -49,7 +50,8 @@ exports.updateOne = async (req, res, next) => {
         ...JSON.parse(req.body.sauce),
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     } : { ...req.body }
-
+    
+    console.log("🚀 ~ file: sauces.js:51 ~ exports.updateOne= ~ sauce:", sauce)
     delete sauce.userId;
     try {
         const currentSauce = await Sauce.findOne({ _id: req.params.id });

@@ -39,6 +39,10 @@ exports.login = async (req, res, next) => {
                     expiresIn: 86400 // expires in 24 hours
                 });
                 // return id and token containing user id
+                console.log({
+                    userId: user._id,
+                    token: token
+                });
                 res.status(200).json({
                     userId: user._id,
                     token: token

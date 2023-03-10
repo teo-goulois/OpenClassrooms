@@ -1,6 +1,5 @@
 // create a server with express
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const helmet = require("helmet");
@@ -27,10 +26,7 @@ app.use(helmet({
     crossOriginResourcePolicy: false,
 }));
 
-// use body parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.json())
 
 // use cors
 app.use(cors());
