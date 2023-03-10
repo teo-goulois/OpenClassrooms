@@ -1,0 +1,50 @@
+@use './mixins';
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: var(--red);
+    text-align: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+
+        .error-code {
+            font-size: 96px;
+            font-weight: 700;
+
+            @include mixins.devices(tablet) {
+                font-size: 288px;
+            }
+        }
+
+        .error-message {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            text-align: center;
+            @include mixins.devices(tablet) {
+                font-size: 36px;
+            }
+        }
+    }
+
+
+    .error-button {
+        margin-top: 131px;
+        color: var(--red);
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: underline;
+        @include mixins.devices(tablet) {
+            font-size: 18px;
+        }
+    }
+}
