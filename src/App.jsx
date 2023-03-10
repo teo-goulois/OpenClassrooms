@@ -7,6 +7,7 @@ import About from './pages/About'
 import Error from './pages/Error'
 // Components
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   )
 }

@@ -25,10 +25,5 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 1.25rem;
   gap: 17px;
-
-  @include mixins.devices(tablet) {
-    padding: 2.5rem;
-  }
 }

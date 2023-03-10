@@ -4,10 +4,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.25rem 1.25rem 0 1.25rem;
 
-    .logo { 
+    @include mixins.devices(tablet) {
+        padding: 2.25rem 2.25rem 0 2.25rem;
+    }
+
+
+    .logo {
         width: 145px;
         height: 47px;
+
         @include mixins.devices(tablet) {
             width: 200px;
             height: 67px;
@@ -31,10 +38,12 @@
 
         li {
             border-bottom: 1px solid transparent;
+
             &:hover {
                 border-color: 1px solid var(--red);
             }
         }
+
         a {
             text-decoration: none;
             color: var(--red);
