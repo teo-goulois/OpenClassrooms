@@ -7,7 +7,7 @@ export function Chevron(props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_8_513)">
+      <g clipPath="url(#clip0_8_513)">
         <path
           d="M3.3705 5.76136L2.01209 7.13059L9.61002 14.7383L17.208 7.1229L15.8495 5.76136L9.61002 12.0152L3.3705 5.76136Z"
           fill="white"

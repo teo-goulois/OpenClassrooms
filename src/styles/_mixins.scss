@@ -2,7 +2,7 @@
 
     //the name of the mixin is devices
     @if $breakpoint ==tablet {
-      @media only screen and (min-width: 680px) {
+      @media only screen and (min-width: 880px) {
         @content;
       }
     }

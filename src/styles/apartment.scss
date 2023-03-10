@@ -1,0 +1,92 @@
+@use './mixins';
+
+.apartment {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_header {
+        display: flex;
+        flex-direction: row;
+        gap: 76px;
+        justify-content: space-between;
+
+        &_user {
+            display: none;
+
+            @include mixins.devices(tablet) {
+                display: flex;
+            }
+        }
+
+    }
+
+    &_title {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h1 {
+            font-size: 18px;
+            font-weight: 500;
+
+            @include mixins.devices(tablet) {
+                font-size: 36px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 500;
+
+            @include mixins.devices(tablet) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &_meta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include mixins.devices(tablet) {
+            flex-direction: row;
+            gap: 76px;
+            justify-content: space-between;
+        }
+
+        &_tags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &_user {
+                @include mixins.devices(tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &_infos {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        div {
+            flex: 1;
+        }
+
+        @include mixins.devices(tablet) {
+            flex-direction: row;
+            gap: 76px;
+        }
+    }
+}

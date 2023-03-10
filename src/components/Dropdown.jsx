@@ -25,7 +25,15 @@ const Dropdown = ({ title, body }) => {
         </button>
       </div>
       <div className={isOpen ? 'dropdown_body open' : 'dropdown_body'}>
-        <p>{body}</p>
+        {typeof body === 'object' ? (
+          <ul>
+            {body.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{body}</p>
+        )}
       </div>
     </div>
   )

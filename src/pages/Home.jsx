@@ -22,7 +22,7 @@ const Home = () => {
               <Link
                 key={apartment.id}
                 to={`/apartment/${apartment.id}`}
-                className="apartment"
+                className="card_apartment"
               >
                 <img src={apartment.cover} alt={apartment.title} />
                 <div className="apartment_filter" />

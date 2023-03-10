@@ -13,3 +13,63 @@ main {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.tag {
+    border-radius: 5px;
+    min-width: 84px;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: var(--red);
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 15px;
+
+    @include mixins.devices(tablet) {
+        height: 30px;
+        gap: 10px;
+    }
+
+    .star {
+        height: 100%;
+    }
+    .star-empty {
+        height: 100%;
+        color: var(--gray);
+    }
+}
+
+
+.user_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+
+    @include mixins.devices(tablet) {
+        font-size: 18px;
+    }
+
+    p {
+        width: min-content;
+        text-align: right;
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+
+        @include mixins.devices(tablet) {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
