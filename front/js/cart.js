@@ -122,7 +122,7 @@ const createCard = async (product, cartDetails, cart) => {
   quantityInput.value = cartDetails.quantity;
 
   quantityInput.addEventListener("change", (e) => {
-    if (e.target.value < 1) return alert('vous devez séléctionez une quantité supérieur à 0')
+    if (e.target.value < 1 || e.target.value > 100 ) return alert('vous devez séléctionez une quantité supérieur à 0')
     const updatedCart = updateQuantity(product._id, cartDetails.color, e.target.value, currentCart);
     currentCart = updatedCart
     updatePriceAndQuantity(currentCart)

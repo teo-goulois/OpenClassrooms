@@ -87,13 +87,14 @@ quantityButton.addEventListener('change', (e) => {
  */
 function add2Cart(product) {
     // check if we have a quantity and a color selected
-    if (quantity < 1) return alert('vous devez séléctionez une quantité supérieur à 0')
+    if (quantity < 1 || quantity > 100) return alert('vous devez séléctionez une quantité entre 0 et 100')
     if (color && quantity) {
         const cart = getCart()
         const productIsFound = cart.find((el) => el.id === product._id)
         if (productIsFound) {
             const foundColor = productIsFound.products.find(el => el.color === color)
             if (foundColor) {
+                if(foundColor.quantity + quantity > 100) return alert('vous ne pouvez pas ajouter plus de 100 produits au panier')
                 foundColor.quantity = parseInt(foundColor.quantity + quantity)
             } else {
                 productIsFound.products.push({ color, quantity })
