@@ -3,6 +3,7 @@ import '../styles/carousel.scss'
 import { Chevron } from './Chevron'
 
 const Carousel = ({ images }) => {
+  console.log('🚀 ~ file: Carousel.jsx:6 ~ Carousel ~ images:', images)
   const [currentImage, setCurrentImage] = React.useState(0)
 
   const handleNext = () => {
@@ -26,12 +27,17 @@ const Carousel = ({ images }) => {
       <div className="carousel_image">
         <img src={images[currentImage]} alt="images of apartments" />
       </div>
-      <button onClick={handlePrev} type="button" className="left">
-        <Chevron />
-      </button>
-      <button onClick={handleNext} type="button" className="right">
-        <Chevron />
-      </button>
+      <div className="image_counter">{currentImage} / {images.length}</div>
+      {images.length > 1 && (
+        <button onClick={handlePrev} type="button" className="left">
+          <Chevron />
+        </button>
+      )}
+      {images.length > 1 && (
+        <button onClick={handleNext} type="button" className="right">
+          <Chevron />
+        </button>
+      )}
     </div>
   )
 }

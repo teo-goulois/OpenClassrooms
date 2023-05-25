@@ -3,12 +3,11 @@
         "browser": true,
         "es6": true
     },
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "extends": [
         "plugin:react/recommended",
         "airbnb",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "globals": {
         "Atomics": "readonly",

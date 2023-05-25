@@ -11,9 +11,9 @@ const Header = () => {
     <header>
       <MaxContainer>
         <div className="header">
-          <div className="logo">
+          <Link to="/" className="logo">
             <Logo />
-          </div>
+          </Link>
           <nav>
             <ul>
               <li>
