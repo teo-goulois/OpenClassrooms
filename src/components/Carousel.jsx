@@ -27,7 +27,7 @@ const Carousel = ({ images }) => {
       <div className="carousel_image">
         <img src={images[currentImage]} alt="images of apartments" />
       </div>
-      <div className="image_counter">{currentImage} / {images.length}</div>
+      <div className="image_counter">{currentImage + 1} / {images.length}</div>
       {images.length > 1 && (
         <button onClick={handlePrev} type="button" className="left">
           <Chevron />
