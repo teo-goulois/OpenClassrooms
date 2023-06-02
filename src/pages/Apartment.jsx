@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/apartment.scss'
 
-import { useParams, redirect  } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useApartment } from '../hooks/useApartment'
 // Components
 import Carousel from '../components/Carousel'
@@ -12,12 +12,14 @@ import Dropdown from '../components/Dropdown'
 import MaxContainer from '../components/MaxContainer'
 
 const Apartment = () => {
-  // get id from url
   const { id } = useParams()
   const apartment = useApartment(id)
 
+  const navigate = useNavigate()
+
   if (!apartment) {
-    return redirect("/error")
+    navigate('/404')
+    return null
   }
   return (
     <MaxContainer>
