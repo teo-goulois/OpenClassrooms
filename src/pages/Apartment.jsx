@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/apartment.scss'
 
-import { useParams } from 'react-router-dom'
+import { useParams, redirect  } from 'react-router-dom'
 import { useApartment } from '../hooks/useApartment'
 // Components
 import Carousel from '../components/Carousel'
@@ -17,7 +17,7 @@ const Apartment = () => {
   const apartment = useApartment(id)
 
   if (!apartment) {
-    return <div>Chargement...</div>
+    return redirect("/error")
   }
   return (
     <MaxContainer>

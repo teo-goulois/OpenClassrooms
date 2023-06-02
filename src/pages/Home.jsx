@@ -10,10 +10,10 @@ const Home = () => {
       <div className="home-container">
         <div className="bg-img">
           <div className="background-filter" />
-          <h2>
+          <h1>
             Chez vous,
             <br /> partout et ailleurs
-          </h2>
+          </h1>
         </div>
 
         <div className="apartments-wrapper">
@@ -26,7 +26,7 @@ const Home = () => {
               >
                 <img src={apartment.cover} alt={apartment.title} />
                 <div className="apartment_filter" />
-                <h3>{`${apartment.title}`}</h3>
+                <p>{`${apartment.title}`}</p>
               </Link>
             )
           })}
