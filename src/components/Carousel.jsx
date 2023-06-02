@@ -3,7 +3,6 @@ import '../styles/carousel.scss'
 import { Chevron } from './Chevron'
 
 const Carousel = ({ images }) => {
-  console.log('🚀 ~ file: Carousel.jsx:6 ~ Carousel ~ images:', images)
   const [currentImage, setCurrentImage] = React.useState(0)
 
   const handleNext = () => {
